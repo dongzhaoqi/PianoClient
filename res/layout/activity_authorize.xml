@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECEFF0"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/common_actionbar"
+        layout="@layout/include_action_bar" />
+
+    <ListView
+        android:id="@+id/verified_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:divider="#DADBDA"
+        android:dividerHeight="1px"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_authorize_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/login_button_selector"
+            android:text="@string/authorize_selected"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_authorize_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/login_button_selector"
+            android:layout_alignParentRight="true"
+            android:text="@string/authorize_all"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+</LinearLayout>

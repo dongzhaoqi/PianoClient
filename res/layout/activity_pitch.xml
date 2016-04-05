@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_menu"
+    android:orientation="vertical"
+    
+     >
+
+    <include
+        android:id="@+id/common_actionbar"
+        layout="@layout/include_action_bar" />
+    
+    <!-- <RelativeLayout
+        android:id="@+id/base_activity_rl"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:background="@drawable/biaoti" >
+
+        <ImageView
+            android:id="@+id/base_activity_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:padding="2dip"
+            android:src="@drawable/piano" />
+
+        <TextView
+            android:id="@+id/base_activity_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="音高"
+            android:textColor="#fff"
+            android:textSize="24dip" />
+        
+        <Button 
+            android:id="@+id/btn_register"
+			android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="注册"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout> -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/volume_1"
+            style="@style/btnStyleBeige"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_margin="10.0dip"
+            android:layout_weight="1.0"
+            android:background="@drawable/button_selector"
+            android:text="单音" />
+
+        <Button
+            android:id="@+id/volume_2"
+            style="@style/btnStyleBeige"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_margin="10.0dip"
+            android:layout_weight="1.0"
+            android:background="@drawable/button_selector"
+            android:text="旋律音程" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/volume_8"
+            style="@style/btnStyleBeige"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_margin="10.0dip"
+            android:layout_weight="1.0"
+            android:background="@drawable/button_selector"
+            android:text="音阶" />
+
+        <Button
+            android:id="@+id/volume_3"
+            style="@style/btnStyleBeige"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_margin="10.0dip"
+            android:layout_weight="1.0"
+            android:background="@drawable/button_selector"
+            android:text="和声音程" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/volume_4"
+            style="@style/btnStyleBeige"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_margin="10.0dip"
+            android:layout_weight="1.0"
+            android:background="@drawable/button_selector"
+            android:text="分解三和弦" />
+
+        <Button
+            android:id="@+id/volume_5"
+            style="@style/btnStyleBeige"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_margin="10.0dip"
+            android:layout_weight="1.0"
+            android:background="@drawable/button_selector"
+            android:text="三和弦" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/volume_6"
+            style="@style/btnStyleBeige"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_margin="10.0dip"
+            android:layout_weight="1.0"
+            android:background="@drawable/button_selector"
+            android:text="分解七和弦" />
+
+        <Button
+            android:id="@+id/volume_7"
+            style="@style/btnStyleBeige"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_margin="10.0dip"
+            android:layout_weight="1.0"
+            android:background="@drawable/button_selector"
+            android:text="七和弦" />
+    </LinearLayout>
+
+</LinearLayout>

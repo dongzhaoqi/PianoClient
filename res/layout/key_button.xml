@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ff000000"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/above"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_marginLeft="3.0dip"
+        android:layout_marginRight="3.0dip"
+        android:layout_weight="1.0"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent" >
+
+            <Button
+                android:id="@+id/white1"
+                android:layout_width="80.0dip"
+                android:layout_height="fill_parent"
+                android:background="@drawable/white_btn_selector" />
+
+            <Button
+                android:id="@+id/white2"
+                android:layout_width="80.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="80.0dip"
+                android:background="@drawable/white_btn_selector" />
+
+            <Button
+                android:id="@+id/white3"
+                android:layout_width="80.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="160.0dip"
+                android:background="@drawable/white_btn_selector" />
+
+            <Button
+                android:id="@+id/black1"
+                android:layout_width="50.0dip"
+                android:layout_height="100.0dip"
+                android:layout_marginLeft="55.0dip"
+                android:background="@drawable/black_btn_selector" />
+
+            <Button
+                android:id="@+id/black2"
+                android:layout_width="50.0dip"
+                android:layout_height="100.0dip"
+                android:layout_marginLeft="135.0dip"
+                android:background="@drawable/black_btn_selector" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent" >
+
+            <Button
+                android:id="@+id/white4"
+                android:layout_width="80.0dip"
+                android:layout_height="fill_parent"
+                android:background="@drawable/white_btn_selector" />
+
+            <Button
+                android:id="@+id/white5"
+                android:layout_width="80.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="80.0dip"
+                android:background="@drawable/white_btn_selector" />
+
+            <Button
+                android:id="@+id/white6"
+                android:layout_width="80.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="160.0dip"
+                android:background="@drawable/white_btn_selector" />
+
+            <Button
+                android:id="@+id/white7"
+                android:layout_width="80.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="240.0dip"
+                android:background="@drawable/white_btn_selector" />
+
+            <Button
+                android:id="@+id/black3"
+                android:layout_width="50.0dip"
+                android:layout_height="100.0dip"
+                android:layout_marginLeft="55.0dip"
+                android:background="@drawable/black_btn_selector" />
+
+            <Button
+                android:id="@+id/black4"
+                android:layout_width="50.0dip"
+                android:layout_height="100.0dip"
+                android:layout_marginLeft="135.0dip"
+                android:background="@drawable/black_btn_selector" />
+
+            <Button
+                android:id="@+id/black5"
+                android:layout_width="50.0dip"
+                android:layout_height="100.0dip"
+                android:layout_marginLeft="215.0dip"
+                android:background="@drawable/black_btn_selector" />
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/white8"
+            android:layout_width="80.0dip"
+            android:layout_height="fill_parent"
+            android:background="@drawable/white_btn_selector" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/below"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_marginLeft="3.0dip"
+        android:layout_marginRight="3.0dip"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent" >
+
+            <Button
+                android:id="@+id/white9"
+                android:layout_width="80.0dip"
+                android:layout_height="fill_parent"
+                android:background="@drawable/white_btn_selector" />
+
+            <Button
+                android:id="@+id/white10"
+                android:layout_width="80.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="80.0dip"
+                android:background="@drawable/white_btn_selector" />
+
+            <Button
+                android:id="@+id/white11"
+                android:layout_width="80.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="160.0dip"
+                android:background="@drawable/white_btn_selector" />
+
+            <Button
+                android:id="@+id/black6"
+                android:layout_width="50.0dip"
+                android:layout_height="100.0dip"
+                android:layout_marginLeft="55.0dip"
+                android:background="@drawable/black_btn_selector" />
+
+            <Button
+                android:id="@+id/black7"
+                android:layout_width="50.0dip"
+                android:layout_height="100.0dip"
+                android:layout_marginLeft="135.0dip"
+                android:background="@drawable/black_btn_selector" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent" >
+
+            <Button
+                android:id="@+id/white12"
+                android:layout_width="80.0dip"
+                android:layout_height="fill_parent"
+                android:background="@drawable/white_btn_selector" />
+
+            <Button
+                android:id="@+id/white13"
+                android:layout_width="80.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="80.0dip"
+                android:background="@drawable/white_btn_selector" />
+
+            <Button
+                android:id="@+id/white14"
+                android:layout_width="80.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="160.0dip"
+                android:background="@drawable/white_btn_selector" />
+
+            <Button
+                android:id="@+id/white15"
+                android:layout_width="80.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="240.0dip"
+                android:background="@drawable/white_btn_selector" />
+
+            <Button
+                android:id="@+id/black8"
+                android:layout_width="50.0dip"
+                android:layout_height="100.0dip"
+                android:layout_marginLeft="55.0dip"
+                android:background="@drawable/black_btn_selector" />
+
+            <Button
+                android:id="@+id/black9"
+                android:layout_width="50.0dip"
+                android:layout_height="100.0dip"
+                android:layout_marginLeft="135.0dip"
+                android:background="@drawable/black_btn_selector" />
+
+            <Button
+                android:id="@+id/black10"
+                android:layout_width="50.0dip"
+                android:layout_height="100.0dip"
+                android:layout_marginLeft="215.0dip"
+                android:background="@drawable/black_btn_selector" />
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/white16"
+            android:layout_width="80.0dip"
+            android:layout_height="fill_parent"
+            android:background="@drawable/white_btn_selector" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="20dip" >
+
+        <Button
+            android:id="@+id/a"
+            android:layout_width="20dip"
+            android:layout_height="20dip"
+            android:background="@drawable/white_btn_selector"
+            android:paddingLeft="10dip" />
+
+        <Button
+            android:id="@+id/b"
+            android:layout_width="20dip"
+            android:layout_height="20dip"
+            android:background="@drawable/white_btn_selector"
+            android:paddingLeft="10dip" />
+    </LinearLayout>
+
+</LinearLayout>

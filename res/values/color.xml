@@ -1,0 +1,24 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="register_normal">#3196c9</color>
+    <color name="register_pressed">#2E9ED7</color>
+    <color name="edit_hint">#A1A1A1</color>
+    
+    <color name="left_menu_head">#5A727C</color>
+    <color name="left_menu_background">#5A5A5A</color>
+    <color name="transparent">#00000000</color>
+    <color name="text_white">#fff</color>
+    
+    <color name="set_background">#DFDFDF</color>
+    <color name="background">#f2f2f2</color>
+    <color name="background_row">#fcfcfc</color>
+    <color name="table_background">#cbcbcb</color>
+
+    <color name="line_color">#848484</color>
+    
+    
+    
+</resources>

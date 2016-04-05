@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ECEFF0"
+    android:weightSum="3" >
+
+    <include
+        android:id="@+id/common_actionbar"
+        layout="@layout/include_action_bar" />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:background="@drawable/logo2"
+        android:orientation="horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="10dip"
+        android:weightSum="3" >
+
+        <TextView 
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/version_text"
+        	android:textColor="#626466"
+            />
+        <TextView 
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+        	android:textColor="#626466"
+            android:text="@string/version"
+            android:gravity="left"
+            />
+
+    </LinearLayout>
+
+  	<View 
+  	    android:layout_width="match_parent"
+  	    android:layout_height="0.1dp"
+  	    android:background="@color/line_color"
+  	    />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="10dip"
+        android:weightSum="3" >
+
+        <TextView 
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+        	android:textColor="#626466"
+            android:text="@string/contact_text"
+            />
+        <TextView 
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+        	android:textColor="#626466"
+            android:text="@string/contact"
+            android:gravity="left"
+            />
+    </LinearLayout>
+
+</LinearLayout>
