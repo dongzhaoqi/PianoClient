@@ -180,16 +180,17 @@ public class HomeActivity extends FragmentActivity implements OnClickListener,
 		LeftMenuItem account = new LeftMenuItem("用户统计");
 		leftMenu.add(account);
 
-		LeftMenuItem myTrace = new LeftMenuItem("授权");
-
+		LeftMenuItem score = new LeftMenuItem("我的成绩");
+		leftMenu.add(score);
+		
+		LeftMenuItem authorize = new LeftMenuItem("授权");	
+		
 		String userName = CustomApplcation.getInstance().getUser()
 				.getUserName();
 		if ("root".equals(userName)) {
-			leftMenu.add(myTrace);
+			leftMenu.add(authorize);
+			leftMenu.remove(score);
 		}
-
-		LeftMenuItem set = new LeftMenuItem("我的成绩");
-		leftMenu.add(set);
 
 		LeftMenuItem about = new LeftMenuItem("关于超级耳朵");
 		leftMenu.add(about);
@@ -224,7 +225,7 @@ public class HomeActivity extends FragmentActivity implements OnClickListener,
 			break;
 
 		case "我的成绩":
-			startActivity(new Intent(HomeActivity.this, HomeActivity.class));
+			startActivity(new Intent(HomeActivity.this, MyScoreActivity.class));
 			break;
 
 		case "关于超级耳朵":

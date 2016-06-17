@@ -15,7 +15,7 @@ public class ContantValues {
 	/**
 	 * 本机测试
 	 */
-	//public static String urlRoot = "http://10.1.40.245:8080/PianoServer/";
+	//public static String urlRoot = "http://10.1.40.76:8080/PianoServer/";
 	//public static String urlRoot = "http://10.1.40.54:8080/PianoServer/";
 
 }

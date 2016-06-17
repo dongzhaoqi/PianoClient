@@ -38,6 +38,7 @@
         <activity android:name="com.pianostudy.ui.UserStatisticsActivity" />
         <activity android:name="com.pianostudy.ui.AuthorizeActivity" />
         <activity android:name="com.pianostudy.ui.UserInfoActivity" />
+        <activity android:name="com.pianostudy.ui.MyScoreActivity" />
         
         
     </application>

@@ -13,10 +13,7 @@
         android:layout_height="0dip"
         android:layout_weight="1"
         android:orientation="horizontal"
-        android:paddingBottom="0dip"
-        android:paddingLeft="8dip"
-        android:paddingRight="8dip"
-        android:paddingTop="3dip"
+        android:padding="8dip"
         android:weightSum="4" >
         
         <Button 
@@ -24,6 +21,8 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:background="@drawable/button_selector"
+            android:layout_margin="4dp"
             android:text="大三和弦"
             />
         <Button 
@@ -31,6 +30,8 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:background="@drawable/button_selector"
+            android:layout_margin="4dp"
             android:text="大三和弦"
             />
         <Button 
@@ -38,6 +39,8 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:background="@drawable/button_selector"
+            android:layout_margin="4dp"
             android:text="大三和弦"
             />
         <Button 
@@ -45,6 +48,8 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:background="@drawable/button_selector"
+            android:layout_margin="4dp"
             android:text="大三和弦"
             />
         
@@ -56,10 +61,8 @@
         android:layout_height="0dip"
         android:layout_weight="1"
         android:orientation="horizontal"
-        android:paddingBottom="15dip"
-        android:paddingLeft="8dip"
-        android:paddingRight="8dip"
-        android:paddingTop="0dip"
+        android:layout_marginTop="10dp"
+        android:padding="8dip"
         android:weightSum="4" >
         
         <Button 
@@ -67,6 +70,8 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:background="@drawable/button_selector"
+            android:layout_margin="4dp"
             android:text="小三和弦"
             />
         <Button 
@@ -74,6 +79,8 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:background="@drawable/button_selector"
+            android:layout_margin="4dp"
             android:text="小三和弦"
             />
         <Button 
@@ -81,6 +88,8 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:background="@drawable/button_selector"
+            android:layout_margin="4dp"
             android:text="小三和弦"
             />
         <Button 
@@ -88,6 +97,8 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:background="@drawable/button_selector"
+            android:layout_margin="4dp"
             android:text="小三和弦"
             />
         
@@ -342,7 +353,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="开挂键" />
+                android:text="提示" />
         </LinearLayout>
     </LinearLayout>
 

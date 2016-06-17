@@ -96,6 +96,8 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 	 */
 	private String tag = "PortraitButtonActivity";
 
+	String btnText;			//按钮上的文字
+	
 	/**
 	 * 是否是play模式
 	 */
@@ -227,27 +229,41 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 	private void initBtnText() {
 		ItemInfo info = playerThread.getText();
 		int len = info.names.length;
+		int k;
+		System.out.println("info.names.length:" + len);
+		for(int i = 0; i < len; i++){
+			System.out.println("info.names:" + info.names[i]);
+		}
 		int index = info.index;
 		rightText = info.names[index];
-		// System.out.println("text:" + text + " index:" + index);
-		int k = new Random().nextInt(8);
-		btns[k].setText(info.names[index]);
-		for(int i = (k+1)%8,j=1; j <= 7; i++,j++){
-			if(i == 8){
-				i = 0;
-			}
-			btns[i].setText(info.names[(index + j) % len]);
+		for(int i = 0; i < 8; i++){
+			btns[i].setVisibility(View.VISIBLE);
 		}
-		
-		/*btn_menu1.setText(info.names[index]);
-		btn_menu2.setText(info.names[(index + 1) % len]);
-		btn_menu3.setText(info.names[(index + 2) % len]);
-		btn_menu4.setText(info.names[(index + 3) % len]);
-		btn_menu5.setText(info.names[(index + 4) % len]);
-		btn_menu6.setText(info.names[(index + 5) % len]);
-		btn_menu7.setText(info.names[(index + 6) % len]);
-		btn_menu8.setText(info.names[(index + 7) % len]);*/
-
+		// System.out.println("text:" + text + " index:" + index);
+		if(len < 8){
+			k = new Random().nextInt(len);
+			btns[k].setText(info.names[index]);
+			for(int i = (k+1)%len,j=1; j < len; i++,j++){
+				if(i == len){
+					i = 0;
+				}
+				btns[i].setText(info.names[(index + j) % len]);
+				btns[i].setSelected(false);
+			}
+			for(int i = len; i < 8; i++){
+				btns[i].setVisibility(View.INVISIBLE);
+			}
+		}else{	
+			k = new Random().nextInt(8);
+			btns[k].setText(info.names[index]);
+			for(int i = (k+1)%8,j=1; j <= 7; i++,j++){
+				if(i == 8){
+					i = 0;
+				}
+				btns[i].setText(info.names[(index + j) % len]);
+				btns[i].setSelected(false);
+			}
+		}
 	}
 
 	/**
@@ -385,7 +401,14 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 		case R.id.button_note_name:
 		// changeText();
 			if(isPlay){
-				txt_tips.setText(s);
+				//txt_tips.setText(s);
+				System.out.println("aaa" + s.substring(0, s.indexOf("-")));
+				for(int i = 0; i < btns.length; i++){
+					btnText = btns[i].getText().toString();
+					if(btnText.equals(s.substring(0, s.indexOf("-")))){
+						btns[i].setSelected(true);
+					}
+				}
 			}
 			Log.d(tag, "button_note_name");
 			break;

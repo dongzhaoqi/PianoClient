@@ -72,7 +72,7 @@ public class UserInfoActivity extends BaseActivity{
 					txtUrl = "http://116.228.3.125/PianoServer/SynTxtDataServlet?userName="+URLEncoder.encode(userName, "UTF-8");
 					
 					//参数中包含空格，所以要用encode编码一下
-					//txtUrl = "http://10.1.40.245:8080/PianoServer/SynTxtDataServlet?userName="+URLEncoder.encode(userName, "UTF-8");
+					//txtUrl = "http://10.1.40.76:8080/PianoServer/SynTxtDataServlet?userName="+URLEncoder.encode(userName, "UTF-8");
 				} catch (UnsupportedEncodingException e1) {
 					e1.printStackTrace();
 				}
