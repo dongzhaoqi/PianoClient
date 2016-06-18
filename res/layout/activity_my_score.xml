@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ECEFF0"
+    android:weightSum="3" >
+
+    <include
+        android:id="@+id/common_actionbar"
+        layout="@layout/include_action_bar" />
+    
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/row_padding_left"
+        android:paddingRight="@dimen/row_padding_right"
+        >
+    
+        <TextView 
+            android:id="@+id/tv_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/row_padding_left"
+            android:layout_marginRight="@dimen/row_padding_right"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:scrollbars="vertical"
+            />
+        </ScrollView>
+
+</LinearLayout>
