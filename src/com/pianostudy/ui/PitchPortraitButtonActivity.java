@@ -1,14 +1,11 @@
 package com.pianostudy.ui;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import org.apache.http.Header;
 import org.apache.http.entity.StringEntity;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,7 +15,6 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.loopj.android.http.TextHttpResponseHandler;
 import com.piano.view.CustomApplcation;
@@ -29,7 +25,6 @@ import com.pianostudy.ui.manager.MidiBaseManager;
 import com.pianostudy.ui.thread.PlayerThread;
 import com.pianostudy.ui.util.GeiliRestClient;
 import com.pianostudy.ui.util.MidiCreateUtil;
-import com.pianostudy.ui.util.SITI_LogDebug;
 
 /**
  * 音高钢琴键竖排的界面
@@ -38,14 +33,14 @@ import com.pianostudy.ui.util.SITI_LogDebug;
  * @author lizhao
  * @date 2015-11-7 下午10:22:03
  */
-public class PitchPortraitButtonActivity extends Activity implements
+public class PitchPortraitButtonActivity extends BaseActivity implements
 		OnClickListener {
 
 	/**
 	 * 十六个白键
 	 */
-	private CheckBox  w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, w13,
-			w14, w15, w16;
+	private CheckBox w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, w13, w14,
+			w15, w16;
 	private Button w1;
 	/**
 	 * 十个黑键
@@ -118,9 +113,9 @@ public class PitchPortraitButtonActivity extends Activity implements
 	private PlayerThread playerThread;
 	private Button button_note_name;
 	private ArrayList<CheckBox> cbList;
-	
-	private String str_itemInfo,userName;
-	
+
+	private String str_itemInfo, userName;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -143,9 +138,9 @@ public class PitchPortraitButtonActivity extends Activity implements
 	private void initData() {
 		itemType = getIntent().getIntExtra("itemType", 0);
 		itemMode = TestType.ITEM_MODE_PITCH;
-		
-		System.out.println("itemType:"+itemType+"itemMode:"+itemMode);
-		
+
+		System.out.println("itemType:" + itemType + "itemMode:" + itemMode);
+
 		switch (itemType) {
 		case 0:
 			strItemType = "单音";
@@ -174,9 +169,11 @@ public class PitchPortraitButtonActivity extends Activity implements
 		default:
 			break;
 		}
-		
+
 		strItemMode = "音高";
-		
+
+		initTopBarForLeft(strItemMode + "-" + strItemType);
+
 		// midiBaseManager = new MidiBaseManager();
 		// midiBaseManager.init(itemMode, itemType, 0, 0);
 		// Log.d(tag, "itemMode"+itemMode + "itemType:"+itemType);
@@ -254,17 +251,17 @@ public class PitchPortraitButtonActivity extends Activity implements
 		nextLevelButton = (Button) findViewById(R.id.next_level);
 		lastItemButton = (Button) findViewById(R.id.last_item);
 		lastLevelButton = (Button) findViewById(R.id.last_level);
-	
 
 	}
+
 	/**
 	 * 初始化钢琴键的选择事件 给他们添加选择变化事件
 	 */
 	public void initEvent() {
-		
+
 		for (int i = 0; i < allCheckBoxList.size(); i++) {
 			allCheckBoxList.get(i).setOnCheckedChangeListener(
-					new ProtraitButtonOnTouchListener(this, i,cbList));
+					new ProtraitButtonOnTouchListener(this, i, cbList));
 		}
 
 	}
@@ -283,13 +280,11 @@ public class PitchPortraitButtonActivity extends Activity implements
 		w1.setOnClickListener(this);
 	}
 
-	
-
 	/**
 	 * 设置钢琴键的名字
 	 */
 	private void initText() {
-		
+
 		w1.setText("F4");
 		w1.setTextSize(10);
 		for (int i = 0; i < allCheckBoxList.size(); i++) {
@@ -301,20 +296,22 @@ public class PitchPortraitButtonActivity extends Activity implements
 			allCheckBoxList.get(i).setTextColor(Color.TRANSPARENT);
 		}
 	}
+
 	private boolean isShowName = false;
+
 	/**
 	 * 改变文本
 	 */
-	private void changeText(){
+	private void changeText() {
 		if (isShowName) {
-	
+
 			isShowName = false;
 			w1.setTextColor(Color.TRANSPARENT);
 			for (int i = 0; i < allCheckBoxList.size(); i++) {
 				allCheckBoxList.get(i).setTextColor(Color.TRANSPARENT);
 			}
 		} else {
-			
+
 			isShowName = true;
 			w1.setTextColor(Color.BLACK);
 			for (int i = 0; i < allCheckBoxList.size(); i++) {
@@ -322,6 +319,7 @@ public class PitchPortraitButtonActivity extends Activity implements
 			}
 		}
 	}
+
 	@Override
 	/**
 	 * 实现OnClickListener中的onClick()方法
@@ -333,7 +331,7 @@ public class PitchPortraitButtonActivity extends Activity implements
 			try {
 				playEvent();
 			} catch (Exception e) {
-				System.out.println("error:"+e.getMessage());
+				System.out.println("error:" + e.getMessage());
 				e.printStackTrace();
 			}
 			break;
@@ -360,7 +358,7 @@ public class PitchPortraitButtonActivity extends Activity implements
 		case R.id.button_note_name:
 			changeText();
 			Log.d(tag, "button_note_name");
-			Log.d(tag, cbList.size()+"");
+			Log.d(tag, cbList.size() + "");
 			break;
 		case R.id.w1:
 			w16.setChecked(!w16.isChecked());
@@ -374,7 +372,7 @@ public class PitchPortraitButtonActivity extends Activity implements
 	 * 重置所有按键
 	 */
 	public void resetKey() {
-//		
+		//
 		for (int i = 0; i < allCheckBoxList.size(); i++) {
 			allCheckBoxList.get(i).setOnCheckedChangeListener(null);
 			allCheckBoxList.get(i).setChecked(false);
@@ -384,7 +382,8 @@ public class PitchPortraitButtonActivity extends Activity implements
 
 	/**
 	 * 点击play响应的事件
-	 * @throws Exception 
+	 * 
+	 * @throws Exception
 	 */
 	private void playEvent() throws Exception {
 		isPlay = true;
@@ -392,18 +391,19 @@ public class PitchPortraitButtonActivity extends Activity implements
 		initEvent();
 		String s = playerThread.play();
 		tv_reminder.setText("现在是答题模式：请点击音符键后点'Ok'键！！！" + s);
-		
-		userName = ((CustomApplcation) getApplication())
-				.getUser().getUserName();
-		
+
+		userName = ((CustomApplcation) getApplication()).getUser()
+				.getUserName();
+
 		String api = "api/user/log";
 		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("str_itemInfo", strItemMode + "_" + strItemType + "_"+ tv_itemInfo.getText());
+		jsonObject.put("str_itemInfo", strItemMode + "_" + strItemType + "_"
+				+ tv_itemInfo.getText());
 		jsonObject.put("userName", userName);
 
 		StringEntity stringEntity = new StringEntity(jsonObject.toString(),
 				"utf-8");
-		
+
 		GeiliRestClient.post(this, api, stringEntity,
 				new TextHttpResponseHandler() {
 
@@ -411,10 +411,10 @@ public class PitchPortraitButtonActivity extends Activity implements
 					public void onSuccess(int arg0, Header[] arg1, String arg2) {
 
 						try {
-							//handleWriteLog();
+							// handleWriteLog();
 						} catch (Exception e) {
 							e.printStackTrace();
-							System.out.println("e.getCause()"+e.getCause());
+							System.out.println("e.getCause()" + e.getCause());
 						}
 
 					}
@@ -422,9 +422,10 @@ public class PitchPortraitButtonActivity extends Activity implements
 					@Override
 					public void onFailure(int arg0, Header[] arg1, String arg2,
 							Throwable arg3) {
-						Log.i("LoginActivity", "failure" + "\narg0:" + arg0 + 
-								" \narg1:"+arg1+"\narg2:" + arg2 +"\narg3:"+arg3.getCause());
-						
+						Log.i("LoginActivity", "failure" + "\narg0:" + arg0
+								+ " \narg1:" + arg1 + "\narg2:" + arg2
+								+ "\narg3:" + arg3.getCause());
+
 					}
 				});
 	}
@@ -443,7 +444,7 @@ public class PitchPortraitButtonActivity extends Activity implements
 		isPlay = false;
 		str_itemInfo = playerThread.setnext(dir);
 		tv_itemInfo.setText(str_itemInfo);
-		
+
 	}
 
 	/**
@@ -459,7 +460,7 @@ public class PitchPortraitButtonActivity extends Activity implements
 			// 进行判断，如果正确，进行下一题
 			if (r) {
 				tv_reminder.setText("恭喜你，答对了:请点击'Play键听音'！！！");
-				
+
 				String api = "api/user/answer";
 				JSONObject jsonObject = new JSONObject();
 				StringEntity stringEntity = null;
@@ -472,15 +473,16 @@ public class PitchPortraitButtonActivity extends Activity implements
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				
+
 				GeiliRestClient.post(this, api, stringEntity,
 						new TextHttpResponseHandler() {
 
 							@Override
-							public void onSuccess(int arg0, Header[] arg1, String arg2) {
+							public void onSuccess(int arg0, Header[] arg1,
+									String arg2) {
 
 								try {
-									//handleWriteLog();
+									// handleWriteLog();
 								} catch (Exception e) {
 									e.printStackTrace();
 								}
@@ -488,20 +490,20 @@ public class PitchPortraitButtonActivity extends Activity implements
 							}
 
 							@Override
-							public void onFailure(int arg0, Header[] arg1, String arg2,
-									Throwable arg3) {
-								Log.i("LoginActivity", "failure" + "\narg0:" + arg0 + 
-										" \narg1:"+arg1+"\narg2:" + arg2 +"\narg3:"+arg3.getCause());
-								
+							public void onFailure(int arg0, Header[] arg1,
+									String arg2, Throwable arg3) {
+								Log.i("LoginActivity", "failure" + "\narg0:"
+										+ arg0 + " \narg1:" + arg1 + "\narg2:"
+										+ arg2 + "\narg3:" + arg3.getCause());
+
 							}
 						});
-				
-				
+
 				isPlay = false;// 设置不是play模式
 				str_itemInfo = playerThread.setnext(1);// 下一题，并返回
 				tv_itemInfo.setText(str_itemInfo);
 			} else {
-				
+
 				String api = "api/user/answer";
 				JSONObject jsonObject = new JSONObject();
 				StringEntity stringEntity = null;
@@ -514,15 +516,16 @@ public class PitchPortraitButtonActivity extends Activity implements
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				
+
 				GeiliRestClient.post(this, api, stringEntity,
 						new TextHttpResponseHandler() {
 
 							@Override
-							public void onSuccess(int arg0, Header[] arg1, String arg2) {
+							public void onSuccess(int arg0, Header[] arg1,
+									String arg2) {
 
 								try {
-									//handleWriteLog();
+									// handleWriteLog();
 								} catch (Exception e) {
 									e.printStackTrace();
 								}
@@ -530,14 +533,15 @@ public class PitchPortraitButtonActivity extends Activity implements
 							}
 
 							@Override
-							public void onFailure(int arg0, Header[] arg1, String arg2,
-									Throwable arg3) {
-								Log.i("LoginActivity", "failure" + "\narg0:" + arg0 + 
-										" \narg1:"+arg1+"\narg2:" + arg2 +"\narg3:"+arg3.getCause());
-								
+							public void onFailure(int arg0, Header[] arg1,
+									String arg2, Throwable arg3) {
+								Log.i("LoginActivity", "failure" + "\narg0:"
+										+ arg0 + " \narg1:" + arg1 + "\narg2:"
+										+ arg2 + "\narg3:" + arg3.getCause());
+
 							}
 						});
-				
+
 				isPlay = true;
 				tv_reminder.setText("不好意思，答错了:请点击音符键后点确认键！！！");
 			}

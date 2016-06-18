@@ -2,12 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background2"
+    android:background="@color/background"
     android:orientation="vertical"
     android:weightSum="6" >
 
     <!-- android:background="@drawable/black_btn_selector" -->
     <!-- 第一行，黑键 -->
+
+	<include
+        android:id="@+id/common_actionbar"
+        layout="@layout/include_action_bar" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -294,12 +298,16 @@
                 android:id="@+id/tv_item_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"
                 android:text="等级：1，题目：1" />
 
             <TextView
                 android:id="@+id/tv_reminder"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
+                android:textSize="14sp"
+                android:textColor="@color/black"
                 android:text="请点击play键听音" />
         </LinearLayout>
 
@@ -313,21 +321,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:weightSum="2" >
+                android:orientation="vertical">
 
                 <Button
                     android:id="@+id/last_item"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:background="@drawable/control_button_selector"
+                    android:layout_marginBottom="@dimen/margin_8"
                     android:text="&lt;" />
 
                 <Button
                     android:id="@+id/last_level"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:background="@drawable/control_button_selector"
                     android:text="&lt;&lt;" />
             </LinearLayout>
 
@@ -336,6 +344,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/control_button_selector"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:text="play" />
 
             <Button
@@ -343,6 +354,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/control_button_selector"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:text="ok" />
 
             <LinearLayout
@@ -356,14 +369,15 @@
                     android:id="@+id/next_item"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:background="@drawable/control_button_selector"
+                    android:layout_marginBottom="@dimen/margin_8"
                     android:text=">" />
 
                 <Button
                     android:id="@+id/next_level"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:background="@drawable/control_button_selector"
                     android:text=">>" />
             </LinearLayout>
 
@@ -372,6 +386,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/control_button_selector"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:text="提示" />
         </LinearLayout>
     </LinearLayout>

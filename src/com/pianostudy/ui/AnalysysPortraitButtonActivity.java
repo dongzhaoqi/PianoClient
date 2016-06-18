@@ -6,10 +6,8 @@ import java.util.Random;
 
 import org.apache.http.Header;
 import org.apache.http.entity.StringEntity;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,7 +34,7 @@ import com.pianostudy.ui.util.GeiliRestClient;
  * @author lizhao
  * @date 2015-11-10 上午1:13:47
  */
-public class AnalysysPortraitButtonActivity extends Activity implements
+public class AnalysysPortraitButtonActivity extends BaseActivity implements
 		OnClickListener {
 
 	/**
@@ -54,9 +52,9 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 
 	private Button btn_menu1, btn_menu2, btn_menu3, btn_menu4, btn_menu5,
 			btn_menu6, btn_menu7, btn_menu8;
-	private Button []btns = new Button[]{btn_menu1, btn_menu2, btn_menu3, btn_menu4, btn_menu5,
-		btn_menu6, btn_menu7, btn_menu8};
-	private String rightText,s;
+	private Button[] btns = new Button[] { btn_menu1, btn_menu2, btn_menu3,
+			btn_menu4, btn_menu5, btn_menu6, btn_menu7, btn_menu8 };
+	private String rightText, s;
 	private Object[] values;
 	/**
 	 * 上一等级
@@ -77,7 +75,7 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 	/**
 	 * 确认按钮
 	 */
-	//private Button okButton;
+	// private Button okButton;
 	/**
 	 * play按钮
 	 */
@@ -85,7 +83,7 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 	/**
 	 * 提示信息，TextView
 	 */
-	private TextView tv_reminder,txt_tips;
+	private TextView tv_reminder, txt_tips;
 	/**
 	 * 当前等级关卡信息，TextView
 	 */
@@ -96,8 +94,8 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 	 */
 	private String tag = "PortraitButtonActivity";
 
-	String btnText;			//按钮上的文字
-	
+	String btnText; // 按钮上的文字
+
 	/**
 	 * 是否是play模式
 	 */
@@ -145,6 +143,7 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 	 * 实例化所有的钢琴键
 	 */
 	private void initView() {
+
 		button_note_name = (Button) findViewById(R.id.button_note_name);
 		// b6 = (CheckBox) findViewById(R.id.b6);
 		// b7 = (CheckBox) findViewById(R.id.b7);
@@ -177,24 +176,26 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 		// allCheckBoxList.add(w15);
 		// allCheckBoxList.add(w16);
 
-		/*btn_menu1 = (Button) findViewById(R.id.btn_menu1);
-		btn_menu2 = (Button) findViewById(R.id.btn_menu2);
-		btn_menu3 = (Button) findViewById(R.id.btn_menu3);
-		btn_menu4 = (Button) findViewById(R.id.btn_menu4);
-		btn_menu5 = (Button) findViewById(R.id.btn_menu5);
-		btn_menu6 = (Button) findViewById(R.id.btn_menu6);
-		btn_menu7 = (Button) findViewById(R.id.btn_menu7);
-		btn_menu8 = (Button) findViewById(R.id.btn_menu8);
+		/*
+		 * btn_menu1 = (Button) findViewById(R.id.btn_menu1); btn_menu2 =
+		 * (Button) findViewById(R.id.btn_menu2); btn_menu3 = (Button)
+		 * findViewById(R.id.btn_menu3); btn_menu4 = (Button)
+		 * findViewById(R.id.btn_menu4); btn_menu5 = (Button)
+		 * findViewById(R.id.btn_menu5); btn_menu6 = (Button)
+		 * findViewById(R.id.btn_menu6); btn_menu7 = (Button)
+		 * findViewById(R.id.btn_menu7); btn_menu8 = (Button)
+		 * findViewById(R.id.btn_menu8);
+		 * 
+		 * btn_menu1.setOnClickListener(this);
+		 * btn_menu2.setOnClickListener(this);
+		 * btn_menu3.setOnClickListener(this);
+		 * btn_menu4.setOnClickListener(this);
+		 * btn_menu5.setOnClickListener(this);
+		 * btn_menu6.setOnClickListener(this);
+		 * btn_menu7.setOnClickListener(this);
+		 * btn_menu8.setOnClickListener(this);
+		 */
 
-		btn_menu1.setOnClickListener(this);
-		btn_menu2.setOnClickListener(this);
-		btn_menu3.setOnClickListener(this);
-		btn_menu4.setOnClickListener(this);
-		btn_menu5.setOnClickListener(this);
-		btn_menu6.setOnClickListener(this);
-		btn_menu7.setOnClickListener(this);
-		btn_menu8.setOnClickListener(this);*/
-		
 		btns[0] = (Button) findViewById(R.id.btn_menu1);
 		btns[1] = (Button) findViewById(R.id.btn_menu2);
 		btns[2] = (Button) findViewById(R.id.btn_menu3);
@@ -203,7 +204,7 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 		btns[5] = (Button) findViewById(R.id.btn_menu6);
 		btns[6] = (Button) findViewById(R.id.btn_menu7);
 		btns[7] = (Button) findViewById(R.id.btn_menu8);
-		
+
 		btns[0].setOnClickListener(this);
 		btns[1].setOnClickListener(this);
 		btns[2].setOnClickListener(this);
@@ -212,13 +213,12 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 		btns[5].setOnClickListener(this);
 		btns[6].setOnClickListener(this);
 		btns[7].setOnClickListener(this);
-		
 
 		tv_itemInfo = (TextView) findViewById(R.id.tv_item_info);
 		tv_reminder = (TextView) findViewById(R.id.tv_reminder);
 		txt_tips = (TextView) findViewById(R.id.txt_tips);
 		playButton = (Button) findViewById(R.id.play);
-		//okButton = (Button) findViewById(R.id.ok);
+		// okButton = (Button) findViewById(R.id.ok);
 		nextItemButton = (Button) findViewById(R.id.next_item);
 		nextLevelButton = (Button) findViewById(R.id.next_level);
 		lastItemButton = (Button) findViewById(R.id.last_item);
@@ -231,33 +231,34 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 		int len = info.names.length;
 		int k;
 		System.out.println("info.names.length:" + len);
-		for(int i = 0; i < len; i++){
+		for (int i = 0; i < len; i++) {
 			System.out.println("info.names:" + info.names[i]);
 		}
 		int index = info.index;
 		rightText = info.names[index];
-		for(int i = 0; i < 8; i++){
+		for (int i = 0; i < 8; i++) {
 			btns[i].setVisibility(View.VISIBLE);
+			btns[i].setSelected(false);
 		}
 		// System.out.println("text:" + text + " index:" + index);
-		if(len < 8){
+		if (len < 8) {
 			k = new Random().nextInt(len);
 			btns[k].setText(info.names[index]);
-			for(int i = (k+1)%len,j=1; j < len; i++,j++){
-				if(i == len){
+			for (int i = (k + 1) % len, j = 1; j < len; i++, j++) {
+				if (i == len) {
 					i = 0;
 				}
 				btns[i].setText(info.names[(index + j) % len]);
 				btns[i].setSelected(false);
 			}
-			for(int i = len; i < 8; i++){
+			for (int i = len; i < 8; i++) {
 				btns[i].setVisibility(View.INVISIBLE);
 			}
-		}else{	
+		} else {
 			k = new Random().nextInt(8);
 			btns[k].setText(info.names[index]);
-			for(int i = (k+1)%8,j=1; j <= 7; i++,j++){
-				if(i == 8){
+			for (int i = (k + 1) % 8, j = 1; j <= 7; i++, j++) {
+				if (i == 8) {
 					i = 0;
 				}
 				btns[i].setText(info.names[(index + j) % len]);
@@ -275,7 +276,7 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 		// midiBaseManager = new MidiBaseManager();
 		// midiBaseManager.init(itemMode, itemType, 0, 0);
 		// Log.d(tag, "itemMode"+itemMode + "itemType:"+itemType);
-		
+
 		switch (itemType) {
 		case 0:
 			strItemType = "旋律音程";
@@ -301,9 +302,9 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 		default:
 			break;
 		}
-		
-		strItemMode = "分析";
 
+		strItemMode = "分析";
+		initTopBarForLeft(strItemMode + "-" + strItemType);
 	}
 
 	/**
@@ -324,7 +325,7 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 	 */
 	public void initButtonEvent() {
 		playButton.setOnClickListener(this);
-		//okButton.setOnClickListener(this);
+		// okButton.setOnClickListener(this);
 		nextItemButton.setOnClickListener(this);
 		nextLevelButton.setOnClickListener(this);
 		lastItemButton.setOnClickListener(this);
@@ -399,13 +400,13 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 			Log.d(tag, "last_level");
 			break;
 		case R.id.button_note_name:
-		// changeText();
-			if(isPlay){
-				//txt_tips.setText(s);
+			// changeText();
+			if (isPlay) {
+				// txt_tips.setText(s);
 				System.out.println("aaa" + s.substring(0, s.indexOf("-")));
-				for(int i = 0; i < btns.length; i++){
+				for (int i = 0; i < btns.length; i++) {
 					btnText = btns[i].getText().toString();
-					if(btnText.equals(s.substring(0, s.indexOf("-")))){
+					if (btnText.equals(s.substring(0, s.indexOf("-")))) {
 						btns[i].setSelected(true);
 					}
 				}
@@ -483,7 +484,8 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 
 	/**
 	 * 点击play响应的事件
-	 * @throws Exception 
+	 * 
+	 * @throws Exception
 	 */
 	private void playEvent() throws Exception {
 		isPlay = true;
@@ -492,18 +494,19 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 		s = playerThread.play();
 		tv_reminder.setText("请选择正确答案！！！");
 		txt_tips.setText("");
-		
-		userName = ((CustomApplcation) getApplication())
-				.getUser().getUserName();
-		
+
+		userName = ((CustomApplcation) getApplication()).getUser()
+				.getUserName();
+
 		String api = "api/user/log";
 		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("str_itemInfo", strItemMode + "_" + strItemType + "_"+ tv_itemInfo.getText());
+		jsonObject.put("str_itemInfo", strItemMode + "_" + strItemType + "_"
+				+ tv_itemInfo.getText());
 		jsonObject.put("userName", userName);
 
 		StringEntity stringEntity = new StringEntity(jsonObject.toString(),
 				"utf-8");
-		
+
 		GeiliRestClient.post(this, api, stringEntity,
 				new TextHttpResponseHandler() {
 
@@ -511,10 +514,10 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 					public void onSuccess(int arg0, Header[] arg1, String arg2) {
 
 						try {
-							//handleWriteLog();
+							// handleWriteLog();
 						} catch (Exception e) {
 							e.printStackTrace();
-							System.out.println("e.getCause()"+e.getCause());
+							System.out.println("e.getCause()" + e.getCause());
 						}
 
 					}
@@ -522,12 +525,13 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 					@Override
 					public void onFailure(int arg0, Header[] arg1, String arg2,
 							Throwable arg3) {
-						Log.i("LoginActivity", "failure" + "\narg0:" + arg0 + 
-								" \narg1:"+arg1+"\narg2:" + arg2 +"\narg3:"+arg3.getCause());
-						
+						Log.i("LoginActivity", "failure" + "\narg0:" + arg0
+								+ " \narg1:" + arg1 + "\narg2:" + arg2
+								+ "\narg3:" + arg3.getCause());
+
 					}
 				});
-		
+
 	}
 
 	/**
@@ -540,7 +544,7 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 		// resetKey();
 		// initEvent();
 		// play.setText("Play");
-		tv_reminder.setText("请点击'Play键听音'！！！");
+		tv_reminder.setText("请点击 '播放' 键听音！！！");
 		txt_tips.setText("");
 		isPlay = false;
 		str = playerThread.setnext(dir);
@@ -570,8 +574,8 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 			// initEvent();
 			// 进行判断，如果正确，进行下一题
 
-			tv_reminder.setText("恭喜您，答对了！ 请点击'Play'键听音！！");
-			
+			tv_reminder.setText("恭喜您，答对了！ 请点击 '播放' 键听音！！");
+
 			String api = "api/user/answer";
 			JSONObject jsonObject = new JSONObject();
 			StringEntity stringEntity = null;
@@ -579,20 +583,20 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 				jsonObject.put("str_itemInfo", "答对了!!!");
 				jsonObject.put("userName", userName);
 
-				stringEntity = new StringEntity(jsonObject.toString(),
-						"utf-8");
+				stringEntity = new StringEntity(jsonObject.toString(), "utf-8");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			
+
 			GeiliRestClient.post(this, api, stringEntity,
 					new TextHttpResponseHandler() {
 
 						@Override
-						public void onSuccess(int arg0, Header[] arg1, String arg2) {
+						public void onSuccess(int arg0, Header[] arg1,
+								String arg2) {
 
 							try {
-								//handleWriteLog();
+								// handleWriteLog();
 							} catch (Exception e) {
 								e.printStackTrace();
 							}
@@ -600,14 +604,15 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 						}
 
 						@Override
-						public void onFailure(int arg0, Header[] arg1, String arg2,
-								Throwable arg3) {
-							Log.i("LoginActivity", "failure" + "\narg0:" + arg0 + 
-									" \narg1:"+arg1+"\narg2:" + arg2 +"\narg3:"+arg3.getCause());
-							
+						public void onFailure(int arg0, Header[] arg1,
+								String arg2, Throwable arg3) {
+							Log.i("LoginActivity", "failure" + "\narg0:" + arg0
+									+ " \narg1:" + arg1 + "\narg2:" + arg2
+									+ "\narg3:" + arg3.getCause());
+
 						}
 					});
-			
+
 			txt_tips.setText("");
 			isPlay = false;// 设置不是play模式
 			str = playerThread.setnext(1);// 下一题，并返回
@@ -618,8 +623,8 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 
 	public void notOk() {
 		isPlay = true;
-		tv_reminder.setText("不好意思，答错了！ 请点击'play'键重新听音！！");
-		
+		tv_reminder.setText("不好意思，答错了！ 请点击 '播放' 键重新听音！！");
+
 		String api = "api/user/answer";
 		JSONObject jsonObject = new JSONObject();
 		StringEntity stringEntity = null;
@@ -627,12 +632,11 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 			jsonObject.put("str_itemInfo", "答错了!!!");
 			jsonObject.put("userName", userName);
 
-			stringEntity = new StringEntity(jsonObject.toString(),
-					"utf-8");
+			stringEntity = new StringEntity(jsonObject.toString(), "utf-8");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		GeiliRestClient.post(this, api, stringEntity,
 				new TextHttpResponseHandler() {
 
@@ -640,7 +644,7 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 					public void onSuccess(int arg0, Header[] arg1, String arg2) {
 
 						try {
-							//handleWriteLog();
+							// handleWriteLog();
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -650,29 +654,30 @@ public class AnalysysPortraitButtonActivity extends Activity implements
 					@Override
 					public void onFailure(int arg0, Header[] arg1, String arg2,
 							Throwable arg3) {
-						Log.i("LoginActivity", "failure" + "\narg0:" + arg0 + 
-								" \narg1:"+arg1+"\narg2:" + arg2 +"\narg3:"+arg3.getCause());
-						
+						Log.i("LoginActivity", "failure" + "\narg0:" + arg0
+								+ " \narg1:" + arg1 + "\narg2:" + arg2
+								+ "\narg3:" + arg3.getCause());
+
 					}
 				});
-		
+
 		txt_tips.setText("");
 	}
 
-	public Object[] generateRandom(int len){
+	public Object[] generateRandom(int len) {
 		Random random = new Random();
-        values = new Object[len];
-        HashSet<Integer> hashSet = new HashSet<Integer>();
-        
-        // 生成随机数字并存入HashSet
-        while(hashSet.size() < len){
-            hashSet.add(random.nextInt(len) + 1);
-        }
-        
-        values = hashSet.toArray();
-        return values;
+		values = new Object[len];
+		HashSet<Integer> hashSet = new HashSet<Integer>();
+
+		// 生成随机数字并存入HashSet
+		while (hashSet.size() < len) {
+			hashSet.add(random.nextInt(len) + 1);
+		}
+
+		values = hashSet.toArray();
+		return values;
 	}
-	
+
 	/*
 	 * public void okevent() { String str; if (!isPlay) { } else { // boolean r
 	 * = playerThread.okAna(cbList); boolean r = playerThread.okAna(cbList); //

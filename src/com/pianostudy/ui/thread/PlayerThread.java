@@ -55,8 +55,8 @@ public class PlayerThread {
 		flag = true;
 
 		ItemInfo t = midiBaseManager.getTest();
-		String nameString = t.names[t.index];
-		System.out.println("name:" + nameString);
+		// String nameString = t.names[t.index];
+		// System.out.println("name:" + nameString);
 		MidiCreateUtil.writeSelect(context, "play", t);
 		try {
 			Thread.sleep(100);

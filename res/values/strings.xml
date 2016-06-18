@@ -16,6 +16,8 @@
     
     <string name="action_logout">退出</string>
     <string name="about">关于超级耳朵</string>
+
+    <string name="play">p\nl\na\ny</string>
     
 	<string name="network_tips">当前网络不可用,请检查您的网络!</string>
     <string name="toast_error_password_null">密码不能为空</string>

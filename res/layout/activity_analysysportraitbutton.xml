@@ -2,11 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background2"
+    android:background="@color/background"
     android:orientation="vertical">
 
     <!-- android:background="@drawable/black_btn_selector" -->
     <!-- 第一行，黑键 -->
+
+	<include
+        android:id="@+id/common_actionbar"
+        layout="@layout/include_action_bar" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -240,22 +244,19 @@
         android:layout_height="0dip"
         android:layout_weight="4"
         android:orientation="vertical"
-        android:paddingBottom="15dip"
-        android:paddingLeft="8dip"
-        android:paddingRight="8dip"
-        android:paddingTop="0dip"
+        android:padding="8dip"
         android:weightSum="8" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
             android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/tv_item_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+            	android:layout_marginBottom="8dp"
                 android:textSize="18sp"
                 android:textColor="@color/black"
                 android:text="等级：1，题目：1" />
@@ -270,9 +271,9 @@
                 android:id="@+id/tv_reminder"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:textSize="19sp"
+                android:textSize="16sp"
                 android:textColor="@color/black"
-                android:text="请点击play键听音" />
+                android:text="请点击'播放'键听音" />
             
             <TextView 
                 android:id="@+id/txt_tips"
@@ -288,12 +289,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="4" >
+            android:weightSum="6" >
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:orientation="vertical"
                 android:weightSum="2" >
 
@@ -301,14 +302,15 @@
                     android:id="@+id/last_item"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:background="@drawable/control_button_selector"
+                    android:layout_marginBottom="@dimen/row_padding"
                     android:text="&lt;" />
 
                 <Button
                     android:id="@+id/last_level"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:background="@drawable/control_button_selector"
                     android:text="&lt;&lt;" />
             </LinearLayout>
 
@@ -317,7 +319,10 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="play" />
+                android:background="@drawable/control_button_selector"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:text="播放" />
 
             <!-- <Button
                 android:id="@+id/ok"
@@ -329,7 +334,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:orientation="vertical"
                 android:weightSum="2" >
 
@@ -338,6 +343,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/control_button_selector"
+                    android:layout_marginBottom="@dimen/row_padding"
                     android:text=">" />
 
                 <Button
@@ -345,6 +352,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/control_button_selector"
                     android:text=">>" />
             </LinearLayout>
 
@@ -353,6 +361,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/control_button_selector"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:text="提示" />
         </LinearLayout>
     </LinearLayout>
